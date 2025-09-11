@@ -1,0 +1,11 @@
+# Matrix Multiplication Benchmark (Serial Baseline)
+
+- Language: C++17
+- Build: `make`
+- Run: `./bin/mm_serial 512` or `./bin/mm_serial 1024`
+
+## Results (Serial)
+N=512  → ~124 ms  
+N=1024 → ~1022 ms  
+
+Next: add OpenMP version and compare speedup vs thread count.
