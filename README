@@ -1,11 +1,20 @@
-# Matrix Multiplication Benchmark (Serial Baseline)
+# HPC Matrix Multiplication Benchmark
 
-- Language: C++17
-- Build: `make`
-- Run: `./bin/mm_serial 512` or `./bin/mm_serial 1024`
+This project benchmarks different parallel programming models (OpenMP, MPI, CUDA planned) using dense matrix multiplication as the baseline workload.  
+The goal is to demonstrate performance scaling across programming models and hardware backends.
 
-## Results (Serial)
-N=512  → ~124 ms  
-N=1024 → ~1022 ms  
+---
 
-Next: add OpenMP version and compare speedup vs thread count.
+## Serial Implementation (Baseline)
+
+- Language: C++17  
+- Algorithm: Naive triple loop matrix multiplication  
+- Input: Random integers in `[0, 99]` (fixed seed for reproducibility)  
+- Output: Matrix `C = A × B`, plus runtime in milliseconds  
+
+### Example Run
+```bash
+./bin/mm_serial 512
+Matrix size: 512x512
+Serial runtime: 121 ms
+Check: C[0][0]=..., C[N-1][N-1]=...
